@@ -1,10 +1,14 @@
 package igondiu.openclassroom.test.com;
 
 public class Ville {
-    private String nomVille;
-    private String nomPays;
-    private int nbHabitants;
-    private char categorie;
+    protected static int nbreInstancesBis = 0;
+    protected String nomVille;
+    protected String nomPays;
+    protected int nbHabitants;
+    protected char categorie;
+    //Variables publiques qui comptent les instances
+    public static int nbreInstances = 0;
+    //Variable privée qui comptera aussi les instances
 
     public Ville(){
         System.out.println("Création d'une ville vide...");
@@ -49,6 +53,15 @@ public class Ville {
         }else{
             this.categorie = 'C';
         }
+    }
+
+
+    public static int getNbreInstancesBis() {
+        return nbreInstancesBis;
+    }
+
+    public static void setNbreInstances(int nbreInstances) {
+        Ville.nbreInstances = nbreInstances;
     }
 
     public String getNom() {

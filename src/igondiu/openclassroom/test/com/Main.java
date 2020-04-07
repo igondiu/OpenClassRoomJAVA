@@ -35,9 +35,17 @@ public class Main {
         System.out.println(" v1 = "+v1.getNom()+" ville de  "+v1.getNombreHabitants()+ " habitants se situant en "+v1.getNomPays());
         System.out.println(" v2 = "+v2.getNom()+" ville de  "+v2.getNombreHabitants()+ " habitants se situant en "+v2.getNomPays()+"\n\n");
 
-    }
-    Ville V = new Ville("Lyon", "France", 654);
-    Ville V2 = new Ville("Lille", "France",123);
+        Ville V = new Ville("Lyon", "France", 654);
+        Ville V2 = new Ville("Lille", "France",123);
 
-    V.comparer(V2);
+        System.out.println(V.comparer(V2));
+
+        System.out.println(V.decrisToi());
+
+        Capitale parisCapital = new Capitale("Paris", 11000000, "France","Arc de Triomphe");
+
+        System.out.println(parisCapital.decrisToi());
+
+    }
+
 }
