@@ -18,7 +18,13 @@ public class Ville {
         this.setCategorie();
     }
 
-    public Ville(String nomVille, String nomPays, int nbHabitants){
+    public Ville(String nomVille, String nomPays, int nbHabitants) throws NombreHabitantsException, NomVilleException {
+        if(nbHabitants<0){
+            throw new NombreHabitantsException(nbHabitants);
+        }
+        if(nomVille.length() < 4){
+            throw new NomVilleException("le nom de la ville est inférieur à 3 caractères ! nom = " +nomVille);
+        }
         System.out.println("Création de la ville "+nomVille+ " est en cours...");
         this.nbHabitants = nbHabitants;
         this.nomPays = nomPays;
